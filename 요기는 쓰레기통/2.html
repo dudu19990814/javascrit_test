@@ -1,0 +1,32 @@
+<script>
+    const slider = document.querySelector('.slider-video');
+    let slideIndex = 0;
+    const slides = slider.querySelectorAll('.slide-video');
+
+    function showSlide() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slides[slideIndex].style.display = 'block';
+        slides[slideIndex].querySelector('video').play(); //동영상 자동 재생
+    }
+
+    function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        showSlide();
+        if (slideIndex === 0) {
+            // 마지막 슬라이드인 경우, 첫 번째 슬라이드에서 재생을 시작합니다.
+            slides[0].querySelector('video').play();
+        } else {
+            // 현재 슬라이드의 다음 슬라이드에서 재생을 시작합니다.
+            slides[slideIndex].querySelector('video').play();
+        }
+    }
+
+    window.onload = function() {
+        showSlide();
+    };
+</script>

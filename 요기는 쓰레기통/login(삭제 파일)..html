@@ -1,0 +1,72 @@
+
+
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>로그인 창</title>
+		<!--href로 login.css이란는 경로를 설정하고 rel로 관계를 stylesheet라고 정의한다.-->
+        <link rel="stylesheet" href="../css/login.css">
+    </head>
+<body>
+
+	<!--action 으로 지정된 주소 전송한다  ex:네이버. 방식은 post방식으로 사용하므로 http 요청 본문에 포함되어 전송된다.-->
+<form action="https://www.naver.com" method="post">
+		<div class="imgcontainer">
+			<!--아래주소에서 이미지 파일을 읽어오고 뜨운다.-->
+			<img src="https://media.istockphoto.com/vectors/young-man-avatar-full-body-vector-id869068750" alt="프로필 이미지" class="avatar">
+		</div>
+		<!--로그인 하는 기본 틀-->
+		<div class="container">
+			
+			<!--아래와 같은 양식이다.-->
+			<label for="uname"><b>아이디</b></label>
+			<input type="text" placeholder="ID를 입력하세요" name="uname" required>
+			<!--for= psw 는 psw라는 아이디를 가진 입력요소와 연결된다. -->
+			<!--형식은 password이고  placeholder는 설명문이라고 생각하고 이름은 psw라고 지정
+			psw라고 속성에 지정된 이름을 가진 입력 요소에는 사용자가 입력한 값을 서버로 전송할 수 있습니다.
+			required란 필수요소라는 지정자 -->
+			<label for="psw"><b>비밀번호</b></label>
+			
+			<input type="password" placeholder="비밀번로를 입력하세요" name="psw" required>
+			<!--button 버튼을 만들고 타입은 submit라고 설정되었는데지정된 주소로 입력값이 전송된다.-->
+			<button type="submit">로그인</button>
+			<label>
+				<input type="checkbox" checked="checked" name="remember"> 아이디 상태 유지
+			</label>
+		</div>
+
+
+<!-- 여기서 부터------------------------------>		
+
+<?php
+	 $conn = mysqli_connect("localhost", "username", "password", "dbname");
+
+
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = mysqli_query($conn, $sql);
+
+
+if (mysqli_num_rows($result) == 1) {
+
+    header("Location: https://example.com/");
+    exit();
+} else {
+
+    echo "아이디 또는 비밀번호가 일치하지 않습니다.";
+}
+
+
+mysqli_close($conn);
+?>
+<!-- 여기서 까지 php코드---------------------->		
+
+		<div class="container" style="background-color:hsl(252, 20%, 95%)">
+			<button type="button" class="cancelbtn">취소</button>
+            <span class="psw"> <a href="#">비밀번호 찾기</a></span>
+		</div>
+	</form>
+</body>
+</html>

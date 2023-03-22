@@ -1,0 +1,136 @@
+<!--2023.03.19 업데이트-->
+
+<!DOCTYPE html>
+<html>   
+  <head>   <!--여기는 css파일을 링킹하는 부분이다 편집된 스타일을 가지고 오는 부분.-->
+    <title>My Home Page</title> <!--브라우저 제일 상단에 각페이지별 제목이라고 생각하면된다(My Home Page)-->>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/videolist.css">
+    <link rel="stylesheet" href="../static/css/info.css">
+  </head>
+  <!--body는 흔히 우리가 생각하는 웹페이지의 메인 화면을 말한다.-->
+  <body>
+    <header>
+      <nav>
+        <ol>    <!--<a> 하이퍼 링크  <ol>정렬된 목록 <ul> 비정렬된 목록 <li> 리스트 목록 -->
+          <li><a href="여기에 로그인 페이비 url설정">로그아웃 </a></li>
+          <li><a href="https://www.naver.com">알림</a></li>
+          <li><a href="https://www.youtube.com/">메세지함</a></li>
+          <li><a href="https://www.google.co.kr/">마이페이지</a></li>
+        </ol>
+      </nav>
+      <h1>
+        <span>취업에는 재수가 없다. </height:></span>
+      </h1>
+    </header>
+
+    <main>
+      <nav>
+        <ol>
+          <li><a href="https://www.naver.com">네이버 바로가기</a></li>
+          <li><a href="https://www.youtube.com/">유튜브 바로가기</a></li>
+          <li><a href="https://www.google.co.kr/">면접연습</a></li>
+        </ol>
+      </nav>
+
+             <!--여기 세션은 notice 클래스 즉 공지란에 해당하는 디자인 패턴을 사용한다.-->
+             <section >
+              <ul class="notice" style="overflow-y: scroll; height: 200px; width: 97.5%;">
+                <h2>공지사항</h2>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+                <li><a href="주소요~~">첫 번째 공지사항입니다.</a></li>
+                <li><a href="#">두 번째 공지사항입니다.</a></li>
+              </ul>
+            </section>
+
+    <!--유튜브처럼 썸네일 화면과 제목 그리고 이미지클릭시 페이지이동하는 세션-->
+    <!--촬용페이지에서 업로드하면 자동으로 이페이지에 업로드 되도록 설정예정-->
+    <!--empty-section은 index.css에 설정된 디자인으로 넓이는 80%고 높이가 700px을 차지하는 빈칸이고 요소가들어가면 자동조절된다.-->>
+        <section class="empty-section">
+          <h2>내 연습동영상 저장소</h2>
+          <div id="video-list">
+            <ul>
+              <li>
+                <a href="https://www.youtube.com/watch?v=mhrKoHndUuA">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=WWKAlbSKIME">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=FbMq73e5LbM">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=XAE911cpSn4">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=hwEpSNanGgs">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=hwEpSNanGgs">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=hwEpSNanGgs">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/watch?v=hwEpSNanGgs">
+                  <img src="../static/png/img3.jpg" alt="동영상 썸네일">
+                  <h3>동영상 제목</h3>
+                </a>
+              </li>
+            </ul>
+          </div> 
+        </section>
+
+        <section class="empty-section">
+          <h2>연습영상 분석 보고서</h2>
+        </section>
+        
+        <section class="empty-section">
+          <h2>연습노트</h2>
+        </section> 
+    </main>
+
+     <footer>
+      <p>
+        <a href="https://www.naver.com">회사소개/</a>
+        <a href="https://www.naver.com"> 인재채용/</a>
+        <a href="https://www.naver.com"> 제휴제안/</a>
+        <a href="https://www.naver.com">이용약관/</a>
+        <a href="https://www.naver.com">개인정보처리방침/</a>
+        <a href="https://www.naver.com">청소년보호정책/</a>
+        <a href="https://www.naver.com">취.재.없 정책관리 /</a>
+        <a href="https://www.naver.com">고객센터</a>
+      </p>
+    </footer>
+  </body>
+</html>
